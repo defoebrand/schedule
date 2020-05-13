@@ -1,0 +1,48 @@
+html {
+
+	}
+
+body {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+#schedule{
+	width: 250px;
+	border: 1px solid gray;
+	margin: 75px;
+	background: gray;
+	opacity: 0.5;
+	color: black;
+	font-weight: bold;
+}
+
+#menu{
+	width: 300px;
+	height: auto;
+	border: 1px solid gray;
+	margin: 50px;
+	font-size: 18px;
+	color: yellow;
+	font-weight: bold;
+	background: purple;
+	font-family: times, sans-serif;
+
+}
+
+#menu li{
+	margin-left: 20px;
+	font-size: 16px;
+}
+
+.container{
+	margin: 10px;
+}
+
+
+/* if calling element use nothing
+   if calling class use . before name
+   if calling id use # before name
+   
