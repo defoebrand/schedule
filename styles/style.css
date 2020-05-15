@@ -13,8 +13,8 @@ body {
 	width: 250px;
 	border: 1px solid gray;
 	margin: 75px;
-	background: gray;
-	opacity: 0.5;
+	background: lightgray;
+/*	opacity: 0.5;*/
 	color: black;
 	font-weight: bold;
 }
@@ -41,6 +41,12 @@ body {
 	margin: 10px;
 }
 
+.sunday{
+	background-image: url(../images/camo.jpg);
+	background-repeat: repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
 
 /* if calling element use nothing
    if calling class use . before name

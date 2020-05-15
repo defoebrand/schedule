@@ -1,41 +1,94 @@
 const currentDay = new Date();
-const today = currentDay.getDay();
+let today = currentDay.getDay();
 let date = currentDay.getDate();
 
+const body = document.querySelector("body");
+
+const daySel = document.getElementById("daySel");
 
 const schedule = document.querySelector('#schedule');
 const menu = document.querySelector("#menu");
 
-const exercise = document.querySelector("#exercise");
-exercise.textContent = pickWorkout();
 
 const first = document.querySelector('#first');
 const cuddle = document.createElement("em");
-cuddle.textContent = " Cuddle";
+
+
 const second = document.querySelector('#second');
+const exercise = document.querySelector("#exercise");
+exercise.textContent = pickWorkout(today);
+
 const third = document.querySelector('#third');
 const work1 = document.createElement("em");
-work1.textContent = " Work";
+
+
 const fourth = document.querySelector('#fourth');
 const lunch = document.createElement("em");
-lunch.textContent = " Lunch";
+
+
 const fifth = document.querySelector('#fifth');
 const work2 = document.createElement("em");
-work2.textContent = " Work";
+
+
 const sixth = document.querySelector('#sixth');
-const vary = document.createElement("em");
-vary.textContent = " Weekly Prep";
-const seventh = document.querySelector('#seventh');
 const dinner = document.createElement("em");
-dinner.textContent = " Dinner";
+
+
+const seventh = document.querySelector('#seventh');
+const vary = document.createElement("em");
+
+
 const eighth = document.querySelector('#eighth');
 const hunny = document.createElement("em");
-hunny.textContent = " Hunny";
+
+
 const ninth = document.querySelector('#ninth');
 const sleep = document.createElement("em");
-sleep.textContent = " Sleep";
 
-if(today == 6){
+
+function layOut(day){
+if(day < 6){
+body.classList.remove("sunday");
+
+first.textContent = "07h - 08h";
+cuddle.textContent = " Cuddle";
+first.appendChild(cuddle);
+
+second.textContent = "08h - 09h ";
+second.appendChild(exercise);
+
+third.textContent = "10h - 14h";
+work1.textContent = " Work";
+third.appendChild(work1);
+
+fourth.textContent = "14h - 15h";
+lunch.textContent = " Lunch";
+fourth.appendChild(lunch);
+
+fifth.textContent = "15h - 19h";
+work2.textContent = " Work";
+fifth.appendChild(work2);
+
+sixth.textContent = "19h - 20h";
+dinner.textContent = " Dinner";
+sixth.appendChild(dinner);
+
+seventh.textContent = "20h - 21h";
+vary.textContent = " Class";
+seventh.appendChild(vary);
+
+eighth.textContent = "21h - 22h";
+hunny.textContent = " Hunny";
+eighth.appendChild(hunny);
+
+ninth.textContent = "23h - 07h";
+sleep.textContent = " Sleep";
+ninth.appendChild(sleep);
+}//monday-friday
+
+else if(day == 6){
+body.classList.remove("sunday");
+
 first.textContent = "09h - 10h";
 first.appendChild(cuddle);
 
@@ -43,29 +96,38 @@ second.textContent = "10h - 11h ";
 second.appendChild(exercise);
 
 third.textContent = "12h - 14h";
+work1.textContent = " Work";
 third.appendChild(work1);
 
 fourth.textContent = "14h - 15h";
+lunch.textContent = " Lunch";
 fourth.appendChild(lunch);
 
 fifth.textContent = "15h - 17h";
+work2.textContent = " Work";
 fifth.appendChild(work2);
 
 sixth.textContent = "17h - 18h";
+vary.textContent = " Weekly Prep";
 sixth.appendChild(vary);
 
 seventh.textContent = "19h - 20h";
+dinner.textContent = " Dinner";
 seventh.appendChild(dinner);
 
 eighth.textContent = "21h - 22h";
+hunny.textContent = " Hunny";
 eighth.appendChild(hunny);
 
 ninth.textContent = "23h - 08h";
+sleep.textContent = " Sleep";
 ninth.appendChild(sleep);
 
 }//if day is saturday
 
-if(today == 7){
+else if(day == 7){
+body.classList.add("sunday");
+
 first.textContent = "08h - 09h";
 first.appendChild(cuddle);
 
@@ -101,9 +163,18 @@ ninth.textContent = "";
 sleep.textContent = "";
 ninth.appendChild(sleep);
 }
+}//layOut
+layOut(today);
 
-function pickWorkout(){
-	switch(today){
+daySel.addEventListener("change", function(){
+//alert(pickWorkout(Number(daySel.value)));
+exercise.textContent = pickWorkout(Number(daySel.value));
+layOut(Number(daySel.value));
+
+});
+
+function pickWorkout(day){
+	switch(day){
 	case 1: return "P90X Plyo";
 	break;
 	case 2: return tuesdayCycle();//"Chest/Back + Abs";
