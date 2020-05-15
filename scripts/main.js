@@ -175,6 +175,26 @@ layOut(Number(daySel.value));
 
 function pickWorkout(day){
 	switch(day){
+	case 1: return "P90X Cardio";
+	break;
+	case 2: return "Rest";
+	break;
+	case 3: return "Chest/Back + Abs";
+	break;
+	case 4: return "Rest";
+	break;
+	case 5: return "Shldrs/Arms + Abs";
+	break;
+	case 6: return "Hunny Exercise";
+	break;
+	case 7: return "Hahaha";
+	break;
+}//switch
+}//pickWorkout
+
+/*
+function pickWorkout(day){
+	switch(day){
 	case 1: return "P90X Plyo";
 	break;
 	case 2: return tuesdayCycle();//"Chest/Back + Abs";
@@ -191,7 +211,7 @@ function pickWorkout(day){
 	break;
 }//switch
 }//pickWorkout
-
+*/
 
 function tuesdayCycle(){
 
