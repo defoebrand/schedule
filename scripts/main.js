@@ -2,6 +2,7 @@ const currentDay = new Date();
 let today = currentDay.getDay();
 let date = currentDay.getDate();
 
+
 const body = document.querySelector("body");
 
 const daySel = document.getElementById("daySel");
@@ -47,7 +48,7 @@ const sleep = document.createElement("em");
 
 
 function layOut(day){
-if(day < 6){
+if(day < 6 && day > 0){
 body.classList.remove("sunday");
 
 first.textContent = "07h - 08h";
@@ -125,7 +126,7 @@ ninth.appendChild(sleep);
 
 }//if day is saturday
 
-else if(day == 7){
+else if(day == 0){
 body.classList.add("sunday");
 
 first.textContent = "08h - 09h";
@@ -171,6 +172,8 @@ daySel.addEventListener("change", function(){
 exercise.textContent = pickWorkout(Number(daySel.value));
 layOut(Number(daySel.value));
 
+
+
 });
 
 function pickWorkout(day){
@@ -187,7 +190,7 @@ function pickWorkout(day){
 	break;
 	case 6: return "Hunny Exercise";
 	break;
-	case 7: return "Hahaha";
+	case 0: return "Hahaha";
 	break;
 }//switch
 }//pickWorkout
