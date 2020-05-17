@@ -43,7 +43,7 @@ body {
 
 .sunday{
 	background-image: url(../images/memorial.jpeg);
-	background-repeat: no-repeat;
+	background-repeat: repeat;
 	background-size: cover;
 /*	background-attachment: fixed;*/
 }
