@@ -45,13 +45,17 @@ body {
 	background-image: url(../images/memorial.jpeg);
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-attachment: fixed;
+/*	background-attachment: fixed;*/
 }
 
 #sunday h3{
 	font-size: 25px;
 	text-align: center;
 	margin: 5px;
+}
+
+@media only screen and (max-width: 350px) {
+.sunday{
 }
 
 
