@@ -167,26 +167,24 @@ ninth.appendChild(sleep);
 }//layOut
 layOut(today);
 
+
 daySel.addEventListener("change", function(){
-//alert(pickWorkout(Number(daySel.value)));
 exercise.textContent = pickWorkout(Number(daySel.value));
 layOut(Number(daySel.value));
-
-
-
 });
+
 
 function pickWorkout(day){
 	switch(day){
-	case 1: return "P90X Cardio";
+	case 1: return "P90X Yoga";
 	break;
 	case 2: return "Rest";
 	break;
-	case 3: return "Chest/Back + Abs";
+	case 3: return "Shoulders/Arms + Abs";
 	break;
 	case 4: return "Rest";
 	break;
-	case 5: return "Shldrs/Arms + Abs";
+	case 5: return "Legs/Back + Abs";
 	break;
 	case 6: return "Hunny Exercise";
 	break;
@@ -230,25 +228,24 @@ function tuesdayCycle(){
 
 let meals = {
 	Breakfast: {
-		A: "Bread/Cheese",
-		B: "Fruit/Yogurt",
-		C: "Biscuits and Gravy"
+		A: "Yogurt/Fruit",
+		B: "Eggs",
+		C: "Oatmeal"
 },
 	Lunch: {
-		A: "Soup/Chicken",
-		B: "Bread/Herring or Salmon",
-		C: "Tuna Salad",
-		D: "Fried Chicken",
+		A: "Chapati / Carrots / Hummus / Soup",
+		B: "Chapati / Can Meat / Soup",
+		C: "Puff Pastry with Ham"
 },
 	Dinner: {
-		A: "Brazilian Fish",
-		B: "Chicken Mango Curry",
-		C: "Anniversary Dinner"
+		A: "Chili",
+		B: "Thai Curry",
+		C: "Liver Rice"
 },
 	Sunday: {
-		Brunch: "Egg Skillet",
-		Tea: "Game or Fish",
-		Sala: "Hot Dogs"
+		Brunch: " ",
+		Tea: " BBQ Chicken ", //Memorial Day
+		Sala: " "
 },
 	Empty:{Empty: "Empty"}
 }
@@ -256,10 +253,10 @@ let meals = {
 
 const monday = document.querySelector("#monday");
 const breakMon = document.createElement("li");
-breakMon.textContent = meals.Breakfast.C;
+breakMon.textContent = meals.Breakfast.A;
 monday.appendChild(breakMon);
 const lunchMon = document.createElement("li");
-lunchMon.textContent = meals.Lunch.D;
+lunchMon.textContent = meals.Lunch.A;
 monday.appendChild(lunchMon);
 const dinMon = document.createElement("li");
 dinMon.textContent = meals.Dinner.A;//pickMeal("monday");
@@ -267,7 +264,7 @@ monday.appendChild(dinMon);
 
 const tuesday = document.querySelector("#tuesday");
 const breakTue = document.createElement("li");
-breakTue.textContent = meals.Breakfast.A;
+breakTue.textContent = meals.Breakfast.B;
 tuesday.appendChild(breakTue);
 const lunchTue = document.createElement("li");
 lunchTue.textContent = meals.Lunch.B;
@@ -278,10 +275,10 @@ tuesday.appendChild(dinTue);
 
 const wednesday = document.querySelector("#wednesday");
 const breakWed = document.createElement("li");
-breakWed.textContent = meals.Breakfast.B;
+breakWed.textContent = meals.Breakfast.C;
 wednesday.appendChild(breakWed);
 const lunchWed = document.createElement("li");
-lunchWed.textContent = meals.Lunch.A;
+lunchWed.textContent = meals.Lunch.C;
 wednesday.appendChild(lunchWed);
 const dinWed = document.createElement("li");
 dinWed.textContent = meals.Dinner.A;//pickMeal("monday");
@@ -289,37 +286,49 @@ wednesday.appendChild(dinWed);
 
 const thursday = document.querySelector("#thursday");
 const breakThu = document.createElement("li");
-breakThu.textContent = meals.Breakfast.A;
+breakThu.textContent = meals.Breakfast.B;
 thursday.appendChild(breakThu);
 const lunchThu = document.createElement("li");
 lunchThu.textContent = meals.Lunch.B;
 thursday.appendChild(lunchThu);
 const dinThu = document.createElement("li");
-dinThu.textContent = meals.Dinner.B;//pickMeal("monday");
+dinThu.textContent = meals.Dinner.C;//pickMeal("monday");
 thursday.appendChild(dinThu);
 
 const friday = document.querySelector("#friday");
 const breakFri = document.createElement("li");
-breakFri.textContent = meals.Breakfast.B;
+breakFri.textContent = meals.Breakfast.C;
 friday.appendChild(breakFri);
 const lunchFri = document.createElement("li");
 lunchFri.textContent = meals.Lunch.C;
 friday.appendChild(lunchFri);
 const dinFri = document.createElement("li");
-dinFri.textContent = meals.Dinner.C;//pickMeal("monday");
+dinFri.textContent = meals.Dinner.B;//pickMeal("monday");
 friday.appendChild(dinFri);
 
 
 const saturday = document.querySelector("#saturday");
 const breakSat = document.createElement("li");
-breakSat.textContent = meals.Empty.Empty;
+breakSat.textContent = meals.Breakfast.A;
 saturday.appendChild(breakSat);
 const lunchSat = document.createElement("li");
-lunchSat.textContent = meals.Empty.Empty;
+lunchSat.textContent = meals.Lunch.A;
 saturday.appendChild(lunchSat);
 const dinSat = document.createElement("li");
-dinSat.textContent = meals.Empty.Empty;//pickMeal("monday");
+dinSat.textContent = meals.Dinner.C;//pickMeal("monday");
 saturday.appendChild(dinSat);
+
+const sunday = document.querySelector("#sunday");
+const themeSun = document.createElement("h3");
+themeSun.textContent = "Memorial Day";
+sunday.appendChild(themeSun);
+
+
+
+
+
+/*
+
 
 const sunday = document.querySelector("#sunday");
 const breakSun = document.createElement("li");
@@ -331,12 +340,6 @@ sunday.appendChild(lunchSun);
 const dinSun = document.createElement("li");
 dinSun.textContent = meals.Sunday.Sala;//pickMeal("monday");
 sunday.appendChild(dinSun);
-
-
-
-/*
-
-
 
 
 

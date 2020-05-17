@@ -20,7 +20,7 @@ body {
 }
 
 #menu{
-	width: 300px;
+	width: 350px;
 	height: auto;
 	border: 1px solid gray;
 	margin: 50px;
@@ -42,11 +42,18 @@ body {
 }
 
 .sunday{
-	background-image: url(../images/camo.jpg);
-	background-repeat: repeat;
+	background-image: url(../images/memorial.jpeg);
+	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
 }
+
+#sunday h3{
+	font-size: 25px;
+	text-align: center;
+	margin: 5px;
+}
+
 
 /* if calling element use nothing
    if calling class use . before name
