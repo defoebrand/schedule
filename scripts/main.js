@@ -13,6 +13,7 @@ const menu = document.querySelector("#menu");
 
 const first = document.querySelector('#first');
 const cuddle = document.createElement("em");
+cuddle.textContent = " Cuddle";
 
 
 const second = document.querySelector('#second');
