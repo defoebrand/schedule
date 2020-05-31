@@ -173,7 +173,7 @@ exercise.textContent = pickWorkout(Number(daySel.value));
 layOut(Number(daySel.value));
 });
 
-
+/*
 function pickWorkout(day){
 	switch(day){
 	case 1: return "P90X Yoga";
@@ -192,8 +192,9 @@ function pickWorkout(day){
 	break;
 }//switch
 }//pickWorkout
+*/
 
-/*
+
 function pickWorkout(day){
 	switch(day){
 	case 1: return "P90X Plyo";
@@ -212,7 +213,6 @@ function pickWorkout(day){
 	break;
 }//switch
 }//pickWorkout
-*/
 
 function tuesdayCycle(){
 
@@ -233,18 +233,18 @@ let meals = {
 		C: "Oatmeal"
 },
 	Lunch: {
-		A: "Chapati / Carrots / Hummus / Soup",
-		B: "Chapati / Can Meat / Soup",
-		C: "Puff Pastry with Ham"
+		A: "Sandwiches",
+		B: "Bread / Can Meat / Tomato Soup",
+		C: "Salmon Salad"
 },
 	Dinner: {
-		A: "Chili",
+		A: "Seafood and Veggies",
 		B: "Thai Curry",
-		C: "Liver Rice"
+		C: "Chinese beef and veggies"
 },
 	Sunday: {
 		Brunch: " ",
-		Tea: " BBQ Chicken ", //Memorial Day
+		Tea: "  ", 
 		Sala: " "
 },
 	Empty:{Empty: "Empty"}
@@ -320,7 +320,7 @@ saturday.appendChild(dinSat);
 
 const sunday = document.querySelector("#sunday");
 const themeSun = document.createElement("h3");
-themeSun.textContent = "Memorial Day";
+themeSun.textContent = "TBD";
 sunday.appendChild(themeSun);
 
 

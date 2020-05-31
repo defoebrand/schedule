@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+   <head>
+     <meta charsets="8">
+     <title>Shopping List</title>  
+<style>
+body {
+	display: flex;
+	flex-direction: center;	
+	justify-content: center;
+	align-items: center;
+	background: #d6c9a2;
+}
+
+#list{
+/*	border: 1px solid black;*/
+	width: 350px;
+	height: 650px;
+	margin-top: 75px;
+	background: url(images/notebook.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+
+}
+
+#insert{
+/*	border: 1px solid black; */
+	margin: 100px 10px 25px 45px;
+	line-height: 25px;
+	border: none;
+/*	background: transparent;*/
+}
+
+#toBuy{
+/*	border: 1px solid black; */
+	min-height: 75px;
+	margin: 25px;
+}
+
+#addItem{
+	border-radius: 5px;
+	margin: 10px 20px 10px 0;
+}
+
+.clickedItem{
+/*	opacity: 0.25;*/
+}
+
+#inBasket{
+/*	border: 1px solid black; */
+	min-height: 50px;
+	margin: 25px 25px 25px 25px;
+	opacity: 0.25;
+}
+</style>
+   </head>
+
+   <body>
+
+<div id="list">
+<!--	<div id="inputBox"></div>
+	<div id="toBuy"></div> -->
+</div>
+
+
+
+     <script>
+
+
+const list = document.querySelector("#list");
+
+const insert = document.createElement("input");
+insert.id = "insert";
+insert.type = "text";
+list.appendChild(insert);
+
+const addItem = document.createElement("button");
+//addItem.type = "Submit";
+addItem.id = "addItem";
+addItem.textContent = "Add Item";
+addItem.addEventListener("click", function(){
+	let groceryItem = document.createElement("li");
+	groceryItem.textContent = insert.value;
+	groceryItem.addEventListener("click", function(){
+		groceryItem.classList.toggle("clickedItem");
+
+	});//list item click event
+	toBuy.appendChild(groceryItem);
+groceryItem.addEventListener("click", function(){
+	if(groceryItem.classList.value !== "clickedItem"){
+	inBasket.appendChild(groceryItem);}
+	else{toBuy.appendChild(groceryItem);}
+});
+	insert.value = "";
+}); //add item click event
+// click listener can do one of three things
+// click and gray.
+//click and gray then click to switch
+//click, gray, and switch
+list.appendChild(addItem);
+
+const toBuy = document.createElement("ul");
+toBuy.id = "toBuy";
+list.appendChild(toBuy);
+
+const inBasket = document.createElement("ul");
+inBasket.id = "inBasket";
+list.appendChild(inBasket);
+
+let shopList = [
+"Beef strips",
+"Frozen Veggies"
+];
+
+for(let i = 0; i < shopList.length; i++){
+let newItem = document.createElement("li");
+newItem.textContent = shopList[i];
+
+	newItem.addEventListener("click", function(){
+		newItem.classList.toggle("clickedItem");
+	});//list item click event
+	toBuy.appendChild(newItem);
+newItem.addEventListener("click", function(){
+	if(newItem.classList.value !== "clickedItem"){
+	inBasket.appendChild(newItem);}
+	else{toBuy.appendChild(newItem);}
+});
+
+
+
+}
+
+
+
+
+</script>
+   </body>
+
+
+
+</html>
