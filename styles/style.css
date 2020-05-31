@@ -54,6 +54,23 @@ body {
 	margin: 5px;
 }
 
+
+#shoppingList{
+	/*background: url(images/notepook.png);*/
+		height: 30px;
+		width: 55px;
+		text-decoration: none;
+		color: black;
+		text-align: center;
+		border: 2px solid black;
+		background: gray;
+		position: fixed;
+		margin-left: 270px;
+			margin-top: -5px;
+			font-size: 12px;
+}
+
+
 @media only screen and (max-width: 350px) {
 .sunday{
 }
@@ -62,4 +79,3 @@ body {
 /* if calling element use nothing
    if calling class use . before name
    if calling id use # before name
-   
