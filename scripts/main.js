@@ -321,7 +321,7 @@ saturday.appendChild(dinSat);
 
 const sunday = document.querySelector("#sunday");
 const themeSun = document.createElement("h3");
-themeSun.textContent = "TBD";
+themeSun.textContent = "Greece";
 sunday.appendChild(themeSun);
 
 
