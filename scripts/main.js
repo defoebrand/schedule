@@ -234,19 +234,19 @@ let meals = {
 		C: "Oatmeal"
 },
 	Lunch: {
-		A: "Sandwiches",
-		B: "Bread / Can Meat / Tomato Soup",
-		C: "Salmon Salad"
+		A: "Dumplings",
+		B: "Šaltibarščai / Sandwich",
+		C: "Herring / Mushroom Soup"
 },
 	Dinner: {
-		A: "Seafood and Veggies",
-		B: "Thai Curry",
-		C: "Chinese beef and veggies"
+		A: "Chicken and Veggies",
+		B: "Pre-Made Pizza base",
+		C: "Ground Beef and Rice"
 },
 	Sunday: {
-		Brunch: " ",
-		Tea: "  ", 
-		Sala: " "
+		Brunch: " Greek Egg Muffins",
+		Tea: " Spanakopita",
+		Sala: " Dips"
 },
 	Empty:{Empty: "Empty"}
 }
