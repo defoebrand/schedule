@@ -15,17 +15,31 @@ body {
 #list{
 /*	border: 1px solid black;*/
 	width: 350px;
-	height: 650px;
+	height: 475px;
 	margin-top: 75px;
 	background: url(images/notebook.png);
 	background-size: 100%;
 	background-repeat: no-repeat;
+  overflow: hidden;
+}
 
+#listWindow {
+  margin-left: -30px;
+  overflow: scroll;
+  height: 325px;
+  overflow-x: hidden;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+  overflow-y: scroll;
+}
+
+#listWindow::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
 }
 
 #insert{
 /*	border: 1px solid black; */
-	margin: 100px 10px 25px 45px;
+	margin: 100px 10px 0 45px;
 	line-height: 25px;
 	border: none;
 /*	background: transparent;*/
@@ -34,7 +48,8 @@ body {
 #toBuy{
 /*	border: 1px solid black; */
 	min-height: 75px;
-	margin: 25px;
+	margin: 5px 25px 25px 25px;
+  line-height: 22px;
 }
 
 #addItem{
@@ -44,6 +59,12 @@ body {
 
 .clickedItem{
 /*	opacity: 0.25;*/
+  font-style: italic;
+}
+
+.checked {
+  min-height: 75px;
+  margin: 5px 25px 25px 25px;
 }
 
 #inBasket{
@@ -74,10 +95,14 @@ insert.id = "insert";
 insert.type = "text";
 list.appendChild(insert);
 
+let listLength = 0;
+let basketLength = 0;
+
 const addItem = document.createElement("button");
 //addItem.type = "Submit";
 addItem.id = "addItem";
 addItem.textContent = "Add Item";
+
 addItem.addEventListener("click", function(){
 	let groceryItem = document.createElement("li");
 	groceryItem.textContent = insert.value;
@@ -85,11 +110,21 @@ addItem.addEventListener("click", function(){
 		groceryItem.classList.toggle("clickedItem");
 
 	});//list item click event
+
 	toBuy.appendChild(groceryItem);
+listLength++;
 groceryItem.addEventListener("click", function(){
 	if(groceryItem.classList.value !== "clickedItem"){
 	inBasket.appendChild(groceryItem);}
-	else{toBuy.appendChild(groceryItem);}
+	else{
+    basketLength++;
+    if(groceryItem.parentNode == inBasket){
+      inBasket.removeChild(groceryItem);
+      checked.appendChild(groceryItem);
+    }else{
+    toBuy.removeChild(groceryItem);
+      checked.appendChild(groceryItem);}
+    }
 });
 	insert.value = "";
 }); //add item click event
@@ -99,13 +134,21 @@ groceryItem.addEventListener("click", function(){
 //click, gray, and switch
 list.appendChild(addItem);
 
+const listWindow = document.createElement("ul");
+listWindow.id = "listWindow";
+list.appendChild(listWindow);
+
 const toBuy = document.createElement("ul");
 toBuy.id = "toBuy";
-list.appendChild(toBuy);
+listWindow.appendChild(toBuy);
+
+const checked = document.createElement("ul");
+checked.classList.add("checked");
+listWindow.appendChild(checked);
 
 const inBasket = document.createElement("ul");
 inBasket.id = "inBasket";
-list.appendChild(inBasket);
+listWindow.appendChild(inBasket);
 
 let weeklyItems = [
   "500g Beef",
@@ -193,28 +236,38 @@ let fats = [
 
 let shopList = [
 //...weeklyItems,
-  ...drinks,
-  ...fruits,
-  ...veggies,
-  ...canned,
-  ...dairy,
-  ...meat,
-  ...grains,
+//  ...drinks,
+//  ...fruits,
+//  ...veggies,
+//  ...canned,
+//  ...dairy,
+//  ...meat,
+//  ...grains,
   ...fats,
 ];
+
+
+
 
 for(let i = 0; i < shopList.length; i++){
 let newItem = document.createElement("li");
 newItem.textContent = shopList[i];
-
+listLength++;
 	newItem.addEventListener("click", function(){
 		newItem.classList.toggle("clickedItem");
 	});//list item click event
 	toBuy.appendChild(newItem);
 newItem.addEventListener("click", function(){
 	if(newItem.classList.value !== "clickedItem"){
-	inBasket.appendChild(newItem);}
-	else{toBuy.appendChild(newItem);}
+	   inBasket.appendChild(newItem);
+     basketLength--;
+     if(basketLength == 0) {listWindow.removeChild(checked);}}
+	else{
+  if(checked.parentNode !== listWindow && basketLength == 0) {listWindow.appendChild(checked);}
+    checked.appendChild(newItem);
+    listLength--;
+    basketLength++;
+  if(listLength == 0) {listWindow.removeChild(toBuy);}}
 });
 
 
