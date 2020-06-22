@@ -31,6 +31,7 @@ To get your own copy of our project clone the repository to your local machine.
 👤 **Brandon Defoe**
 
 - Github: [@defoebrand](https://github.com/defoebrand)
+- Gmail: defoe.brand@gmail.com
 
 
 ## 🤝 Contributing
@@ -43,9 +44,9 @@ Feel free to check the [issues page](issues/).
 
 Give a ⭐️ if you like this project!
 
-## Acknowledgments
-
--
+## Future Features
+- Weekly menu generator
+- Autofill of the shopping list
 
 ## 📝 License
 
