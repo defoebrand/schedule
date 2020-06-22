@@ -1,0 +1,53 @@
+html {
+  background: white;
+}
+
+body {
+  background: gray;
+}
+
+.basic-style {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  margin: 25px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+header button {
+  align-self: flex-end;
+}
+
+#menu-options {
+  border: 1px solid black;
+  width: 250px;
+  align-items: flex-start;
+  background: #675252;
+}
+
+#menu-options label {
+  margin: 5px;
+  background: white;
+  border-radius: 2px;
+  padding: 5px;
+}
+
+#menu-options select {
+  margin: 5px;
+  height: 25px;
+  width: 225px;
+}
+
+#menu-options button {
+  width: 100px;
+  height: 25px;
+  margin: 5px;
+}

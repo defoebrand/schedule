@@ -2,11 +2,11 @@
 
 Brandon's Food and Exercise Scheduler
 
-![screenshot]()
+![screenshot](images/screenshot.png)
 
 Additional description about the project and its features.
 
-This is a personal project used to test newly learned code features as well as to keep me organized each week 
+This is a personal project used to test newly learned code features as well as to keep me organized each week
 
 ## Built With
 
@@ -18,7 +18,7 @@ This is a personal project used to test newly learned code features as well as t
 
 ## Live Demo
 
-[Live Demo Link]()
+[Live Demo Link](https://rawcdn.githack.com/defoebrand/schedule/2a00e04929ffb271a255696e727d6630e2377803/index.html)
 
 
 ## Getting Started
